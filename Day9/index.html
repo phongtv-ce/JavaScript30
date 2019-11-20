@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Day 9 - 14 Must know dev tool tricks</title>
+</head>
+<body>
+	<p onclick="makeGreen()">xBREAKxDOWNx</p>
+	<script type="text/javascript">
+		const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+		function makeGreen(){
+			const p = document.querySelector('p');
+			p.style.color = "#0f0";
+			p.style.fontSize='5em';
+		}
+	console.time("test page");
+	//regular
+	console.log('clap clap clap');
+	//interpolated
+	console.log('hello %s','♥');
+	//styled
+	console.log('%c I am some great text','font-size:50px;color:red');
+	//warning
+	console.warn("keep calm");
+	//error
+	console.error("stop it!");
+	//info
+	console.info("i don't have anything");
+	//testing
+	const p = document.querySelector('p')
+	console.assert(p.classList.contains('treasure'), 'oh nooo!');
+	//clearing
+	//console.clear();
+	
+	//viewing dom element
+	console.log(p);
+	console.dir(p);
+	// Grouping together
+	dogs.forEach(dog => {
+		console.groupCollapsed(`${dog.name}`);
+		console.log(`This is ${dog.name}`);
+		console.log(`${dog.name} is ${dog.age} years old`);
+		console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+		console.groupEnd(`${dog.name}`);
+	})
+
+// counting
+console.count('One');
+console.count('One');
+console.count('One');
+console.count('Another');
+console.count('One');
+console.count('Another');
+console.count('One');
+console.count('Another');
+console.count('Another');
+console.count('One');
+console.count('Another');
+
+
+// timing
+console.time('Fetching data');
+fetch('https://api.github.com/users/wesbos')
+.then(data => data.json())
+.then(jsonData => {
+	console.log(jsonData);
+	console.timeEnd('Fetching data');
+});
+
+// table
+console.table(dogs);
+console.timeEnd('test page');
+</script>
+</body>
+</html>
