@@ -1,2 +1,3 @@
 # JavaScript30
-Code for JS30Day
+Teacher: Bos
+Copy and rewrite from Javascript 30 days
